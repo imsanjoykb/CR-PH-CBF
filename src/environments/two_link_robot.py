@@ -1,29 +1,5 @@
-"""
-2-DOF Planar Manipulator Dynamics Model
-=======================================
-Implements a two-link robotic manipulator with:
-  - Lagrangian dynamics with uncertainty (payload, friction, external forces)
-  - Forward kinematics and Jacobian computation
-  - Obstacle avoidance constraints in Cartesian space
-"""
-
 import numpy as np
-
-
 class TwoLinkRobotEnv:
-    """
-    2-DOF Planar Manipulator with Uncertain Dynamics.
-    
-    The environment simulates a robot arm with:
-    - Nominal parameters assumed by the controller
-    - True perturbed parameters (unknown to controller)
-    - Uncertainty sources: payload mismatch, friction stiction, wind forces
-    
-    Parameters
-    ----------
-    uncertainty_level : str, optional
-        Level of dynamics uncertainty: "low", "medium", or "high" (default: "high")
-    """
     
     def __init__(self, uncertainty_level="high"):
         # Control frequency

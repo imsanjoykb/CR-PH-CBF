@@ -1,16 +1,3 @@
-"""
-CR-PH-CBF: Conformal Robust Port-Hamiltonian Control Barrier Filter
-===================================================================
-A self-contained empirical verification suite for a 2-DOF robotic manipulator
-under dynamics uncertainty (payload mismatch, friction stiction, external drift).
-
-Outputs verified empirical metrics for:
-  1. Unconstrained Control (Unfiltered)
-  2. Nominal CBF-QP (Ames et al.)
-  3. Conservative Heuristic Robust CBF (Taylor et al.)
-  4. Proposed CR-PH-CBF (Port-Hamiltonian + Adaptive Conformal Calibration)
-"""
-
 import numpy as np
 import torch
 import torch.nn as nn
@@ -23,9 +10,7 @@ SEED = 42
 np.random.seed(SEED)
 torch.manual_seed(SEED)
 
-# ==============================================================================
 # 1. 2-DOF MANIPULATOR DYNAMICS & UNCERTAIN ENVIRONMENT
-# ==============================================================================
 class TwoLinkRobotEnv:
     def __init__(self, uncertainty_level="high"):
         self.dt = 0.01  # 100 Hz control loop
@@ -138,15 +123,8 @@ class TwoLinkRobotEnv:
         
         return self.state.copy(), reward, h, ddq
 
-
-# ==============================================================================
 # 2. PORT-HAMILTONIAN RESIDUAL NEURAL NETWORK (PH-ResNet)
-# ==============================================================================
 class PHResNet(nn.Module):
-    """
-    Enforces passivity: \dot{H} <= 0 by factoring unmodeled forces into
-    a conservative scalar potential gradient + Cholesky-factored dissipation.
-    """
     def __init__(self):
         super(PHResNet, self).__init__()
         # Scalar potential network V_theta(q)
@@ -187,10 +165,7 @@ class PHResNet(nn.Module):
         
         return F_cons + F_diss
 
-
-# ==============================================================================
 # 3. HIGH-ORDER CONTROL BARRIER FUNCTION QP SOLVER
-# ==============================================================================
 class SafeCBFFilter:
     def __init__(self, env, ph_model, k1=2.0, k2=2.0, delta=0.01):
         self.env = env
@@ -276,10 +251,7 @@ class SafeCBFFilter:
             # QP Infeasible / Deadlock: apply braking torque
             return -0.5 * dq, False
 
-
-# ==============================================================================
 # 4. BENCHMARK VERIFICATION HARNESS (EVALUATING 4 METHODS)
-# ==============================================================================
 def run_evaluation(num_episodes=20, uncertainty="high"):
     print("="*75)
     print(f"RUNNING RIGOROUS SIMULATION HARNESS | DYNAMICS UNCERTAINTY: {uncertainty.upper()}")

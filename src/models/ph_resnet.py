@@ -1,40 +1,8 @@
-"""
-Port-Hamiltonian Residual Neural Network (PH-ResNet)
-====================================================
-Physics-informed neural architecture that enforces passivity constraints
-for learning unmodeled dynamics in robot systems.
-
-Reference:
-    Incorporates energy-based structure from Port-Hamiltonian system theory
-    to guarantee that learned residuals preserve system stability.
-"""
-
 import torch
 import torch.nn as nn
 
 
 class PHResNet(nn.Module):
-    """
-    Port-Hamiltonian Residual Neural Network.
-    
-    Enforces passivity constraint: dH/dt <= 0 by factoring unmodeled forces into:
-    1. Conservative forces: F_cons = -∇V_θ(q) (gradient of learned potential)
-    2. Dissipative forces: F_diss = -D_θ(q, dq) * dq (Cholesky-factored damping)
-    
-    This structure guarantees that the learned model does not inject energy,
-    preserving closed-loop stability properties.
-    
-    Architecture
-    ------------
-    - Potential Network V_θ(q): Maps joint positions to scalar potential energy
-    - Dissipation Network L_D(q, dq): Outputs lower-triangular Cholesky factor
-      for positive semi-definite damping matrix D = L * L^T >= 0
-    
-    Parameters
-    ----------
-    hidden_dim : int, optional
-        Hidden layer dimension (default: 64)
-    """
     
     def __init__(self, hidden_dim=64):
         super(PHResNet, self).__init__()

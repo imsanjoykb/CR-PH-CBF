@@ -1,14 +1,3 @@
-"""
-Control Barrier Function (CBF) Safety Filter
-============================================
-Implements High-Order CBF-QP with adaptive conformal calibration
-for robust safe control under dynamics uncertainty.
-
-References:
-    - Ames et al. (2019): "Control Barrier Functions"
-    - Taylor et al. (2020): "Learning for Safety-Critical Control with Control Barrier Functions"
-"""
-
 import numpy as np
 import torch
 from scipy.optimize import minimize
