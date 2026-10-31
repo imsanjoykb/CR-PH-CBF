@@ -11,10 +11,10 @@ Rigorous comparison of four safety-critical control methods:
 import numpy as np
 import time
 
-from src.environments import TwoLinkRobotEnv
-from src.models import PHResNet
-from src.controllers import SafeCBFFilter
-from src.utils import ExperimentConfig, train_ph_model
+from crphcbf.environments import TwoLinkRobotEnv
+from crphcbf.models import PHResNet
+from crphcbf.controllers import SafeCBFFilter
+from crphcbf.utils import ExperimentConfig, train_ph_model
 
 
 def run_single_episode(env, cbf_filter, mode, config):

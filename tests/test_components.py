@@ -10,10 +10,10 @@ import os
 # Add parent directory to path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from src.environments import TwoLinkRobotEnv
-from src.models import PHResNet
-from src.controllers import SafeCBFFilter
-from src.utils import ExperimentConfig
+from crphcbf.environments import TwoLinkRobotEnv
+from crphcbf.models import PHResNet
+from crphcbf.controllers import SafeCBFFilter
+from crphcbf.utils import ExperimentConfig
 
 
 def test_environment():

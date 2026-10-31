@@ -45,9 +45,9 @@ def quick_test():
     """Run a quick functionality test."""
     print("Running quick functionality test...\n")
     
-    from src.environments import TwoLinkRobotEnv
-    from src.models import PHResNet
-    from src.controllers import SafeCBFFilter
+    from crphcbf.environments import TwoLinkRobotEnv
+    from crphcbf.models import PHResNet
+    from crphcbf.controllers import SafeCBFFilter
     
     # Test environment
     print("1. Testing environment...")

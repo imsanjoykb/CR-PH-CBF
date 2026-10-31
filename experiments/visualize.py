@@ -21,7 +21,7 @@ def plot_trajectory(states, obstacle_center, obstacle_radius, save_path=None):
     save_path : str, optional
         Path to save figure
     """
-    from src.environments import TwoLinkRobotEnv
+    from crphcbf.environments import TwoLinkRobotEnv
     
     env = TwoLinkRobotEnv()
     
