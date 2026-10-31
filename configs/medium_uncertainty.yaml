@@ -1,0 +1,52 @@
+# Medium Uncertainty Experiment Configuration
+
+experiment:
+  name: "medium_uncertainty"
+  seed: 42
+  num_episodes: 20
+  max_steps: 250
+
+environment:
+  type: "TwoLinkRobot"
+  uncertainty_level: "medium"
+  parameters:
+    payload_mass: 1.5      # +100% uncertainty
+    friction_multiplier: 2.0
+    external_force: 1.5
+    dt: 0.01
+
+obstacle:
+  center: [1.1, 0.4]
+  radius: 0.35
+
+controller:
+  type: "pd"
+  gains:
+    kp: 15.0
+    kd: 3.0
+  torque_limits: [-25.0, 25.0]
+
+cbf:
+  gains:
+    k1: 2.0
+    k2: 2.0
+  conformal:
+    delta: 0.01
+    beta: 0.05
+    window: 200
+
+model:
+  architecture: "PHResNet"
+  hidden_dim: 64
+  activation: "tanh"
+  training:
+    iterations: 200
+    learning_rate: 0.001
+    batch_size: 1
+
+evaluation:
+  methods:
+    - "unconstrained"
+    - "nominal_cbf"
+    - "conservative_robust"
+    - "cr_ph_cbf"
