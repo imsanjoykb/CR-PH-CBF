@@ -1,5 +1,4 @@
-# Conformal Robust Port-Hamiltonian Control Barrier Filters
-
+# Port-Hamiltonian Residual Learning with Adaptive Conformal Barrier Filters for Safe Robot Reinforcement Learning
 <div align="center">
 
 [![arXiv](https://img.shields.io/badge/arXiv-2406.xxxxx-b31b1b.svg)](https://arxiv.org/abs/2406.xxxxx)
@@ -312,7 +311,7 @@ If you find this work useful, please cite:
 
 ```bibtex
 @inproceedings{yourname2026crphcbf,
-  title={Conformal Robust Port-Hamiltonian Control Barrier Filters for Safe Robot Control Under Dynamics Uncertainty},
+  title={Port-Hamiltonian Residual Learning with Adaptive Conformal Barrier Filters for Safe Robot Reinforcement Learning},
   author={Your Name and Co-authors},
   booktitle={Proceedings of Conference Name},
   year={2026},
