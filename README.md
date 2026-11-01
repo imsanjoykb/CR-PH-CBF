@@ -1,5 +1,7 @@
 # Port-Hamiltonian Residual Learning with Adaptive Conformal Barrier Filters for Safe Robot Reinforcement Learning
 
+<div align="center">
+
 ![alt text](assets/architecture.png "CR-PH-CBF")
 
 <div align="center">
