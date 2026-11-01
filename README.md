@@ -1,4 +1,7 @@
 # Port-Hamiltonian Residual Learning with Adaptive Conformal Barrier Filters for Safe Robot Reinforcement Learning
+
+![alt text](assets/architecture.png "CR-PH-CBF")
+
 <div align="center">
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -6,7 +9,7 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Pytorch](https://img.shields.io/badge/PyTorch-1.10+-ee4c2c.svg)](https://pytorch.org/)
 
-**[Paper](https://arxiv.org/abs/2406.xxxxx)** | **[Project Page](https://yourlab.edu/cr-ph-cbf)** | **[Video](https://youtube.com/xxxxx)** | **[Poster](paper/poster.pdf)**
+**[Paper](assets/manuscript.pdf)** | **[Project Page](https://github.com/imsanjoykb/CR-PH-CBF)** | **[Poster](https://github.com/imsanjoykb/CR-PH-CBF)**
 
 </div>
 
