@@ -49,10 +49,6 @@ solver deadlock compared to conservative robust CBF baselines
 (3.2% vs. 18.4%).
 Index Terms
 
-<p align="center">
-  <img src="assets/method_overview.png" alt="Method Overview" width="800"/>
-</p>
-
 ### 🎯 Key Contributions
 
 1. **Port-Hamiltonian ResNet (PH-ResNet)** - Physics-informed neural architecture that guarantees energy passivity (∇H ≤ 0) for learning unmodeled dynamics
@@ -68,7 +64,7 @@ Index Terms
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/CR-PH-CBF.git
+git clone https://github.com/imsanjoykb/CR-PH-CBF.git
 cd CR-PH-CBF
 
 # Create conda environment
@@ -217,14 +213,6 @@ where b₁ = ∂h/∂t + k₁h ensures forward invariance of safe set h(x) ≥ 0
 | Nominal CBF | 35.0% | Medium | Medium |
 | Conservative Robust | 75.0% | Low | High (18% deadlock) |
 | **CR-PH-CBF (Ours)** | **95.0%** | **Minimal** | **Balanced** |
-
-### Ablation Studies
-
-<p align="center">
-  <img src="paper/figures/ablation_uncertainty.png" alt="Ablation" width="600"/>
-</p>
-
-See `paper/tables/` for complete numerical results and LaTeX source.
 
 ---
 
