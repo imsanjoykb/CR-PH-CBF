@@ -329,12 +329,11 @@ docker run -it --rm -v $(pwd):/workspace crphcbf:latest bash
 If you find this work useful, please cite:
 
 ```bibtex
-@inproceedings{yourname2026crphcbf,
+@inproceedings{misc2026crphcbf,
   title={Port-Hamiltonian Residual Learning with Adaptive Conformal Barrier Filters for Safe Robot Reinforcement Learning},
-  author={Your Name and Co-authors},
-  booktitle={Proceedings of Conference Name},
+  author={Sanjoy Kumar, Shovan Kumar Paul, Md Monir Hossain},
+  booktitle={2026 8th International Conference on Control and Robotics (ICCR 2026), Japan},
   year={2026},
-  url={https://arxiv.org/abs/2406.xxxxx}
 }
 ```
 
