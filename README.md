@@ -1,9 +1,8 @@
 # Port-Hamiltonian Residual Learning with Adaptive Conformal Barrier Filters for Safe Robot Reinforcement Learning
 <div align="center">
 
-[![arXiv](https://img.shields.io/badge/arXiv-2406.xxxxx-b31b1b.svg)](https://arxiv.org/abs/2406.xxxxx)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Pytorch](https://img.shields.io/badge/PyTorch-1.10+-ee4c2c.svg)](https://pytorch.org/)
 
@@ -13,11 +12,39 @@
 
 ---
 
-## 📖 About
+## 📖 Abstract
 
-Official PyTorch implementation of **"Conformal Robust Port-Hamiltonian Control Barrier Filters for Safe Robot Control Under Dynamics Uncertainty"**.
-
-**TL;DR:** We combine *Port-Hamiltonian neural networks* with *adaptive conformal prediction* to achieve **provably safe** robot control under severe dynamics uncertainty, outperforming nominal and conservative baselines by **60% in task success** while maintaining **99% safety coverage**.
+>Deploying reinforcement learning (RL) policies on
+physical robotic systems requires certified set invariance un-
+der unmodeled dynamics, non-conservative friction, and non-
+stationary payload drift. Existing frameworks that filter policy
+actions via Control Barrier Functions (CBFs) frequently fail
+when combined with unconstrained deep neural models: black-
+box approximations violate classical mechanical conservation laws,
+introducing spurious non-conservative energy gradients into the
+barrier Lie derivatives that trigger high-frequency actuator chatter
+and quadratic program (QP) solver infeasibility. Concurrently,
+static or heuristic uncertainty bounds either induce conservative
+state deadlocks or fail under non-Gaussian disturbances. This
+paper proposes the Conformal Robust Port-Hamiltonian Control
+Barrier Filter (CR-PH-CBF) for safe robot control under dynamics
+uncertainty. First, we structure the dynamics residual network via
+Port-Hamiltonian mechanics to guarantee structural passivity and
+energy consistency ( ˙H ≤ 0). Second, we formulate a High-Order
+Control Barrier Function (HOCBF) resolving relative-degree-two
+position constraints in canonical phase space. Third, we establish
+an adaptive, distribution-free conformal calibration mechanism
+providing finite-sample residual coverage that adjusts online to
+non-stationary parameter shifts. We prove probabilistic forward
+invariance of the safe set via an Azuma-Hoeffding martingale
+concentration bound over finite operational horizons. Simulation
+experiments on a nonlinear robotic manipulator under severe time-
+varying payload mismatches (+166%) and stiction demonstrate
+high-probability constraint satisfaction (0.1 ± 0.1 violation steps
+per episode), robust generalization, and an 82% reduction in
+solver deadlock compared to conservative robust CBF baselines
+(3.2% vs. 18.4%).
+Index Terms
 
 <p align="center">
   <img src="assets/method_overview.png" alt="Method Overview" width="800"/>
@@ -29,14 +56,6 @@ Official PyTorch implementation of **"Conformal Robust Port-Hamiltonian Control 
 2. **Adaptive Conformal Calibration** - Online uncertainty quantification with probabilistic coverage guarantees
 3. **High-Order CBF-QP Framework** - Robust safety filter combining learned dynamics with formal barrier certificates
 4. **Rigorous Empirical Validation** - Benchmark on 2-DOF manipulator with 166% payload uncertainty, 3× friction, and external disturbances
-
----
-
-## 📰 News
-
-- **[2026-10]** 🎉 Paper accepted at **Conference Name 2026**!
-- **[2026-09]** Code and models released
-- **[2026-06]** Paper submitted to arXiv
 
 ---
 
