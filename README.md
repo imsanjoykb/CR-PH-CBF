@@ -9,7 +9,7 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Pytorch](https://img.shields.io/badge/PyTorch-1.10+-ee4c2c.svg)](https://pytorch.org/)
 
-**[Paper](assets/manuscript.pdf)** | **[Project Page](https://github.com/imsanjoykb/CR-PH-CBF)** | **[Poster](https://github.com/imsanjoykb/CR-PH-CBF)**
+**[Paper](assets/manuscript.pdf)** | **[Project Page](https://github.com/imsanjoykb/CR-PH-CBF)**
 
 </div>
 
