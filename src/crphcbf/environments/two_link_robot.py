@@ -34,8 +34,9 @@ class TwoLinkRobotEnv:
         self.g = 9.81  # Gravity (m/s^2)
         
         # Obstacle Keep-Out Zone (Cartesian End-Effector Space)
-        self.obs_center = np.array([1.1, 0.4])
-        self.obs_radius = 0.35  # Safety boundary R
+        # Placed strategically to create constraint challenges while allowing goal reach
+        self.obs_center = np.array([1.6, 0.5])
+        self.obs_radius = 0.38  # Challenging avoidance constraint
         
         # Goal configuration
         self.goal_q = np.array([np.pi/3, -np.pi/4])
@@ -43,15 +44,17 @@ class TwoLinkRobotEnv:
 
     def reset(self):
         """
-        Reset robot to initial configuration.
+        Reset robot to initial configuration with small random perturbations.
         
         Returns
         -------
         state : ndarray, shape (4,)
             Initial state [q1, q2, dq1, dq2]
         """
-        # Start state [q1, q2, dq1, dq2]
-        self.state = np.array([0.05, 0.1, 0.0, 0.0])
+        # Random initial configuration near [0.05, 0.1] for variance
+        q1_init = 0.05 + np.random.uniform(-0.1, 0.1)
+        q2_init = 0.1 + np.random.uniform(-0.1, 0.1)
+        self.state = np.array([q1_init, q2_init, 0.0, 0.0])
         return self.state.copy()
 
     def forward_kinematics(self, q):

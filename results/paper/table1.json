@@ -1,0 +1,623 @@
+{
+  "metadata": {
+    "timestamp": "2026-11-22T15:29:44.384846",
+    "git": {
+      "commit": "8f95d8b2d79ff122df7f350d4a5e777dfa2234fb",
+      "dirty": true,
+      "status": "M scripts/reproduce_paper_results.py\n M src/crphcbf/controllers/cbf_filter.py\n M src/crphcbf/environments/two_link_robot.py\n M src/crphcbf/models/ph_resnet.py\n M src/crphcbf/utils/config.py\n M src/crphcbf/utils/training.py\n?? REAL_RESULTS_SUMMARY.md\n?? results/\n?? scripts/diagnose.py\n?? src/crphcbf/__pycache__/\n?? src/crphcbf/controllers/__pycache__/\n?? src/crphcbf/environments/__pycache__/\n?? src/crphcbf/models/__pycache__/\n?? src/crphcbf/utils/__pycache__/"
+    },
+    "config": {
+      "uncertainty": "high",
+      "episodes": 20,
+      "seed": 42,
+      "max_steps": 500,
+      "cbf_gains": {
+        "k1": 3.0,
+        "k2": 3.0
+      },
+      "conformal_delta": 0.01
+    }
+  },
+  "results": {
+    "unconstrained": {
+      "success_rate": 0.0,
+      "violations_per_episode": 0.2,
+      "max_violation": 0.0004031450237018938,
+      "deadlock_rate": 0.0,
+      "mean_reward": -3931.234564924198,
+      "std_reward": 42.91402253650763,
+      "episode_data": [
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3957.7417156009205
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3892.2859191031084
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3883.3404008957928
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3920.402333107017
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3927.4500504350603
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3963.442429633767
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3912.6965547649556
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3888.824499102656
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3978.499243154739
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3962.3740970708513
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3901.9362904155573
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -4003.0799392180447
+        },
+        {
+          "success": 0.0,
+          "violations": 4,
+          "max_penetration": 0.008062900474037876,
+          "deadlock_rate": 0.0,
+          "reward": -3839.4087023846173
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3886.7829403540063
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3977.5423245468046
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3904.28911367189
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3972.832286488306
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3907.832193322692
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3993.2881620243743
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3950.6421031887994
+        }
+      ]
+    },
+    "nominal_cbf": {
+      "success_rate": 0.0,
+      "violations_per_episode": 0.0,
+      "max_violation": 0.0,
+      "deadlock_rate": 0.01,
+      "mean_reward": -3758.54704263119,
+      "std_reward": 15.68483457117143,
+      "episode_data": [
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3781.6760386188294
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.2,
+          "reward": -3735.064709941514
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3759.581398900802
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3762.568033880795
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3773.4495188174064
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3772.027084341661
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3743.8954280935195
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3751.95514800067
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3776.0409443173753
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3773.2265037496145
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3746.8627377027165
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3746.985895876539
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3780.8308266339045
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3767.1018082578626
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3741.3137877095173
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3769.4612331294766
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3746.1169699052257
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3732.0802179319103
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3771.1905798289986
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3739.511986985453
+        }
+      ]
+    },
+    "conservative_robust": {
+      "success_rate": 0.0,
+      "violations_per_episode": 0.0,
+      "max_violation": 0.0,
+      "deadlock_rate": 0.05,
+      "mean_reward": -3713.182622702801,
+      "std_reward": 13.36301167167623,
+      "episode_data": [
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3724.856119092922
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3706.105113717075
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3719.4920203910888
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3709.569680603628
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3716.3958371421586
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3716.377127948168
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3725.5360456250282
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3687.1742385493544
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3736.836119190356
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.2,
+          "reward": -3724.9343086921813
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.2,
+          "reward": -3683.641812448003
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3723.6205197409904
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3703.601588471976
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.2,
+          "reward": -3701.280602049365
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3706.650022187109
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.2,
+          "reward": -3704.1520041016947
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.2,
+          "reward": -3719.2469562479205
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3703.0691608286356
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3726.0238417572136
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3725.0893352711514
+        }
+      ]
+    },
+    "cr_ph_cbf": {
+      "success_rate": 0.0,
+      "violations_per_episode": 0.65,
+      "max_violation": 0.001424824898473944,
+      "deadlock_rate": 0.11000000000000003,
+      "mean_reward": -3541.828044347794,
+      "std_reward": 56.756764146680396,
+      "episode_data": [
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3697.1508511518323
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3629.4012054509735
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3602.358587450805
+        },
+        {
+          "success": 0.0,
+          "violations": 9,
+          "max_penetration": 0.022528607889401156,
+          "deadlock_rate": 0.0,
+          "reward": -3584.469978202749
+        },
+        {
+          "success": 0.0,
+          "violations": 2,
+          "max_penetration": 0.002827702127709747,
+          "deadlock_rate": 0.0,
+          "reward": -3577.620244147996
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3559.7893163652475
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3572.692405853148
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3556.474312598579
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3528.4083235996513
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.2,
+          "reward": -3546.63460842709
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.4,
+          "reward": -3520.036122791742
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3512.807024540513
+        },
+        {
+          "success": 0.0,
+          "violations": 2,
+          "max_penetration": 0.0031401879523679788,
+          "deadlock_rate": 0.2,
+          "reward": -3532.0748232103047
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.4,
+          "reward": -3507.25313571091
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.2,
+          "reward": -3484.7924607518617
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3499.4590295916196
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.0,
+          "reward": -3495.960910531389
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.4,
+          "reward": -3489.6201935104114
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.2,
+          "reward": -3495.357612784933
+        },
+        {
+          "success": 0.0,
+          "violations": 0,
+          "max_penetration": 0.0,
+          "deadlock_rate": 0.2,
+          "reward": -3444.1997402841353
+        }
+      ]
+    }
+  }
+}

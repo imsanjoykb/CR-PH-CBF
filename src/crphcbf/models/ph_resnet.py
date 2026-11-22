@@ -39,9 +39,11 @@ class PHResNet(nn.Module):
             Total residual force = F_cons + F_diss
         """
         # 1. Conservative force: F_cons = -∇_q V_θ
-        q_grad = q.clone().detach().requires_grad_(True)
-        V = self.potential_net(q_grad)
-        grad_V = torch.autograd.grad(V.sum(), q_grad, create_graph=True)[0]
+        # Enable gradient computation even if called in no_grad context
+        with torch.enable_grad():
+            q_grad = q.clone().detach().requires_grad_(True)
+            V = self.potential_net(q_grad)
+            grad_V = torch.autograd.grad(V.sum(), q_grad, create_graph=self.training)[0]
         F_cons = -grad_V
         
         # 2. Non-negative Rayleigh Dissipation: D_θ = L * L^T >= 0

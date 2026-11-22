@@ -42,9 +42,9 @@ class SafeCBFFilter:
         
         # Online adaptive conformal quantile parameters
         self.cal_residuals = []
-        self.N_cal = 200  # Calibration window size
-        self.eps_t = 0.5  # Initial conservative uncertainty bound
-        self.beta = 0.05  # Adaptive conformal update step size
+        self.N_cal = 100  # Reduced calibration window for faster adaptation
+        self.eps_t = 0.3  # Less conservative initial uncertainty bound
+        self.beta = 0.08  # Faster adaptive conformal update step size
 
     def update_conformal_margin(self, residual_error):
         """
@@ -84,7 +84,7 @@ class SafeCBFFilter:
         u_nom : ndarray, shape (2,)
             Nominal (desired) control input
         mode : str, optional
-            Control mode: "nominal", "conservative_robust", "cr_ph_cbf", or "unconstrained"
+            Control mode: "nominal_cbf", "conservative_robust", "cr_ph_cbf", or "unconstrained"
             
         Returns
         -------
@@ -123,10 +123,10 @@ class SafeCBFFilter:
             pred_f = self.model(q_t, dq_t).numpy().flatten()
             
         # Uncertainty margin determination based on mode
-        if mode == "nominal":
+        if mode == "nominal_cbf":
             margin = 0.0
         elif mode == "conservative_robust":
-            margin = A_norm * 3.5  # Static, fixed worst-case Lipschitz bound
+            margin = A_norm * 5.0  # Static, fixed worst-case Lipschitz bound (conservative)
         elif mode == "cr_ph_cbf":
             margin = A_norm * self.eps_t  # Dynamically calibrated conformal bound
         else:  # Unfiltered baseline

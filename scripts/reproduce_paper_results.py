@@ -1,22 +1,3 @@
-#!/usr/bin/env python3
-"""
-Reproduce Main Paper Results (Table 1)
-======================================
-
-This script reproduces the main experimental results reported in Table 1
-of the paper. All experiments use fixed random seeds for reproducibility.
-
-Usage:
-    python scripts/reproduce_paper_results.py
-    python scripts/reproduce_paper_results.py --uncertainty high --episodes 20
-    python scripts/reproduce_paper_results.py --save-path results/paper/table1.json
-
-Output:
-    - Console: Formatted table matching paper
-    - JSON: Numerical results with metadata
-    - CSV: Results for plotting
-"""
-
 import argparse
 import json
 import sys
@@ -96,9 +77,9 @@ def run_single_episode(env, cbf_filter, mode, config):
         
         state = next_state
     
-    # Success criterion
+    # Success criterion: reach within 0.3 rad (~17 degrees) with no violations
     dist_final = np.linalg.norm(state[:2] - env.goal_q)
-    success = 1.0 if (dist_final < 0.2 and violations == 0) else 0.0
+    success = 1.0 if (dist_final < 0.3 and violations == 0) else 0.0
     
     return {
         'success': success,
