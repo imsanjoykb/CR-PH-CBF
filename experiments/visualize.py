@@ -1,7 +1,3 @@
-"""
-Quick visualization script for analyzing experiment results
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 

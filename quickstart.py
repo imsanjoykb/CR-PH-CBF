@@ -1,13 +1,7 @@
-#!/usr/bin/env python3
-"""
-Quick Start Script - Run this to verify everything works
-"""
-
 import sys
 import os
 
 def check_dependencies():
-    """Check if required packages are installed."""
     print("Checking dependencies...")
     missing = []
     

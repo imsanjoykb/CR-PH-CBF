@@ -1,13 +1,3 @@
-"""
-Benchmark Evaluation Harness
-============================
-Rigorous comparison of four safety-critical control methods:
-  1. Unconstrained Control (Baseline)
-  2. Nominal CBF-QP
-  3. Conservative Robust CBF
-  4. CR-PH-CBF (Proposed)
-"""
-
 import numpy as np
 import time
 
@@ -18,25 +8,7 @@ from crphcbf.utils import ExperimentConfig, train_ph_model
 
 
 def run_single_episode(env, cbf_filter, mode, config):
-    """
-    Execute one evaluation episode.
-    
-    Parameters
-    ----------
-    env : TwoLinkRobotEnv
-        Robot environment
-    cbf_filter : SafeCBFFilter
-        Safety filter instance
-    mode : str
-        Control mode to evaluate
-    config : ExperimentConfig
-        Configuration parameters
-        
-    Returns
-    -------
-    metrics : dict
-        Episode metrics (success, violations, penetration, deadlocks, reward)
-    """
+
     state = env.reset()
     total_reward = 0.0
     violations = 0
@@ -95,25 +67,7 @@ def run_single_episode(env, cbf_filter, mode, config):
 
 
 def evaluate_method(mode, ph_model, env, config):
-    """
-    Evaluate one control method over multiple episodes.
-    
-    Parameters
-    ----------
-    mode : str
-        Control mode to evaluate
-    ph_model : PHResNet
-        Pre-trained Port-Hamiltonian model
-    env : TwoLinkRobotEnv
-        Robot environment
-    config : ExperimentConfig
-        Configuration parameters
-        
-    Returns
-    -------
-    results : dict
-        Aggregated statistics across all episodes
-    """
+
     cbf_filter = SafeCBFFilter(
         env, ph_model,
         k1=config.CBF_GAINS['k1'],
